@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zymal Azeem — Cybersecurity Intern, Red Team Pentester, and Computer Science student portfolio." />
+  <meta name="theme-color" content="#071019" />
+  <title>Zymal Azeem | Cybersecurity Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="boot-screen" id="bootScreen" aria-hidden="true">
+    <div class="boot-box">
+      <div class="boot-logo">ZA</div>
+      <p class="boot-title">INITIALIZING CYBER PROFILE</p>
+      <div class="boot-track"><span></span></div>
+      <div class="boot-status">Loading portfolio interface...</div>
+    </div>
+  </div>
+
+  <canvas id="networkCanvas" aria-hidden="true"></canvas>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="site-header" id="top">
+    <div class="shell nav-shell">
+      <a href="#home" class="brand" aria-label="Zymal Azeem home">
+        <span class="brand-symbol">ZA</span>
+        <span class="brand-copy">
+          <strong>Zymal Azeem</strong>
+          <small>Cybersecurity Portfolio</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#learned">Learning</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal" data-reveal="left">
+          <div class="status-line">
+            <span class="status-dot"></span>
+            Student • Cybersecurity Intern • Red Team Pentester
+          </div>
+
+          <div class="hero-kicker">Offensive security learning journey</div>
+
+          <h1 class="hero-title" aria-label="Zymal Azeem">
+            <span class="name-mask"><span class="name-word">Zymal</span></span>
+            <span class="name-mask"><span class="name-word accent-name">Azeem</span></span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Computer Science student at Virtual University of Pakistan, currently in the 1st semester, building a strong foundation in cybersecurity through internship experience, practical learning, and authorized security testing.
+          </p>
+
+          <div class="dynamic-role" aria-live="polite">
+            <span class="mono-prompt">$ focus:</span>
+            <span id="typewriterText">Cybersecurity Fundamentals</span>
+            <span class="terminal-cursor">_</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#learned" class="btn btn-primary">Explore My Learning</a>
+            <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+          </div>
+
+          <div class="quick-contact">
+            <a href="mailto:zymalazeem02@gmail.com">zymalazeem02@gmail.com</a>
+            <span class="divider-dot"></span>
+            <a href="tel:+923334638496">0333 4638496</a>
+          </div>
+        </div>
+
+        <div class="hero-stage reveal" data-reveal="right" id="heroStage">
+          <div class="radar-card tilt-surface" id="radarCard">
+            <div class="radar-grid" aria-hidden="true"></div>
+            <div class="radar-ring ring-1" aria-hidden="true"></div>
+            <div class="radar-ring ring-2" aria-hidden="true"></div>
+            <div class="radar-ring ring-3" aria-hidden="true"></div>
+            <div class="radar-sweep" aria-hidden="true"></div>
+            <div class="radar-center">
+              <span class="avatar-core">ZA</span>
+              <small>Learning • Practicing • Improving</small>
+            </div>
+            <span class="radar-node node-a"></span>
+            <span class="radar-node node-b"></span>
+            <span class="radar-node node-c"></span>
+            <span class="radar-node node-d"></span>
+          </div>
+
+          <div class="interactive-terminal" id="interactiveTerminal">
+            <div class="terminal-bar">
+              <div class="terminal-dots"><span></span><span></span><span></span></div>
+              <span>zymal@cyberlab:~</span>
+            </div>
+            <div class="terminal-output" id="terminalOutput" aria-live="polite">
+              <p><span class="prompt">$</span> select a command below</p>
+              <p class="terminal-response">Try <strong>whoami</strong>, <strong>skills</strong>, <strong>learning</strong>, or <strong>goals</strong>.</p>
+            </div>
+            <div class="terminal-commands" role="group" aria-label="Portfolio terminal commands">
+              <button data-command="whoami">whoami</button>
+              <button data-command="skills">skills</button>
+              <button data-command="learning">learning</button>
+              <button data-command="goals">goals</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="signal-strip" aria-label="Current profile highlights">
+      <div class="shell signal-grid">
+        <div class="signal-item reveal" data-reveal="up">
+          <span class="signal-number">01</span>
+          <div><strong>BSCS</strong><small>Virtual University of Pakistan</small></div>
+        </div>
+        <div class="signal-item reveal" data-reveal="up">
+          <span class="signal-number">02</span>
+          <div><strong>1st Semester</strong><small>Building technical foundations</small></div>
+        </div>
+        <div class="signal-item reveal" data-reveal="up">
+          <span class="signal-number">03</span>
+          <div><strong>Cybersecurity Intern</strong><small>Red Team / Pentesting exposure</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell split-layout">
+        <div class="section-heading reveal" data-reveal="left">
+          <span class="section-index">01 / ABOUT</span>
+          <h2>Learning security from the inside out.</h2>
+        </div>
+        <div class="glass-panel reveal" data-reveal="right">
+          <p>
+            I am <strong>Zymal Azeem</strong>, a Computer Science student at the <strong>Virtual University of Pakistan</strong>, currently in my <strong>1st Semester</strong>. Alongside my studies, I am working as a <strong>Cybersecurity Intern</strong> with a growing interest in Red Teaming, Penetration Testing, Web Security, and Network Security.
+          </p>
+          <p>
+            My current focus is on understanding the fundamentals properly, gaining practical exposure, and developing security skills step by step through authorized lab work and continuous learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="shell">
+        <div class="section-heading reveal" data-reveal="up">
+          <span class="section-index">02 / EXPERIENCE</span>
+          <h2>Cybersecurity Internship</h2>
+          <p>Practical exposure to the foundations of offensive security and ethical testing.</p>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card reveal glow-card" data-reveal="left">
+            <div class="timeline-meta">
+              <span>Current</span>
+              <span>Red Team / Pentesting Track</span>
+            </div>
+            <h3>Cybersecurity Intern</h3>
+            <p>
+              Developing practical understanding of cybersecurity through guided learning and authorized security testing environments.
+            </p>
+            <div class="compact-tags">
+              <span>Reconnaissance</span>
+              <span>Scanning</span>
+              <span>Enumeration</span>
+              <span>Web Security</span>
+              <span>Vulnerability Assessment</span>
+              <span>Linux CLI</span>
+            </div>
+          </article>
+
+          <article class="education-card reveal glow-card" data-reveal="right">
+            <span class="card-label">Education</span>
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p>Virtual University of Pakistan</p>
+            <div class="education-row">
+              <span>Current Semester</span>
+              <strong>1st Semester</strong>
+            </div>
+            <p class="card-note">Building a foundation in computing, problem solving, and technology alongside cybersecurity practice.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="shell">
+        <div class="section-heading reveal" data-reveal="up">
+          <span class="section-index">03 / SKILLS</span>
+          <h2>Current technical foundation</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal glow-card" data-reveal="up">
+            <span class="skill-no">01</span>
+            <h3>Cybersecurity Fundamentals</h3>
+            <p>Understanding common security domains, attack surfaces, ethical testing concepts, and basic offensive-security workflow.</p>
+          </article>
+          <article class="skill-card reveal glow-card" data-reveal="up">
+            <span class="skill-no">02</span>
+            <h3>Recon & Assessment</h3>
+            <p>Basic information gathering, network scanning, service enumeration, and vulnerability assessment concepts.</p>
+          </article>
+          <article class="skill-card reveal glow-card" data-reveal="up">
+            <span class="skill-no">03</span>
+            <h3>Web & Network Security</h3>
+            <p>Growing familiarity with web application security fundamentals and network-security concepts.</p>
+          </article>
+          <article class="skill-card reveal glow-card" data-reveal="up">
+            <span class="skill-no">04</span>
+            <h3>Tools & Environment</h3>
+            <p>Kali Linux, Nmap, Burp Suite, Nikto, Linux command line, and controlled practice environments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section learned-section" id="learned">
+      <div class="shell">
+        <div class="section-heading reveal" data-reveal="left">
+          <span class="section-index">04 / WHAT I HAVE LEARNED SO FAR</span>
+          <h2>A simple view of my current cybersecurity learning path.</h2>
+        </div>
+
+        <div class="workflow reveal" data-reveal="up" aria-label="Penetration testing learning workflow">
+          <div class="workflow-line" aria-hidden="true"></div>
+          <article class="workflow-step">
+            <span>01</span>
+            <h3>Fundamentals</h3>
+            <p>Core cybersecurity concepts, major security areas, ethical hacking, offensive and defensive security.</p>
+          </article>
+          <article class="workflow-step">
+            <span>02</span>
+            <h3>Reconnaissance</h3>
+            <p>Learning how information is gathered before an authorized security assessment begins.</p>
+          </article>
+          <article class="workflow-step">
+            <span>03</span>
+            <h3>Scanning & Enumeration</h3>
+            <p>Understanding hosts, ports, services, and how potential attack surfaces are identified.</p>
+          </article>
+          <article class="workflow-step">
+            <span>04</span>
+            <h3>Vulnerability Assessment</h3>
+            <p>Learning how weaknesses are identified, reviewed, and prioritized during an assessment.</p>
+          </article>
+          <article class="workflow-step">
+            <span>05</span>
+            <h3>Testing & Reporting</h3>
+            <p>Building awareness of safe testing practices and the importance of clear security reporting.</p>
+          </article>
+        </div>
+
+        <div class="learning-note reveal" data-reveal="up">
+          <span class="note-icon">!</span>
+          <p>All practical learning is focused on <strong>authorized and controlled environments</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="shell">
+        <div class="section-heading reveal" data-reveal="up">
+          <span class="section-index">05 / PROJECTS</span>
+          <h2>Practice-based work</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal glow-card" data-reveal="left">
+            <span class="project-type">Web Project</span>
+            <h3>Personal Portfolio Website</h3>
+            <p>A personal portfolio created to present my education, cybersecurity learning journey, technical foundation, and future goals.</p>
+            <div class="project-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </article>
+
+          <article class="project-card reveal glow-card" data-reveal="right">
+            <span class="project-type">Practice Lab</span>
+            <h3>Cybersecurity Practice Lab</h3>
+            <p>Hands-on practice focused on reconnaissance, network scanning, basic vulnerability assessment, and web-security concepts in authorized lab environments.</p>
+            <div class="project-stack"><span>Kali Linux</span><span>Nmap</span><span>Burp Suite</span><span>Nikto</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section goals-section" id="goals">
+      <div class="shell goals-layout">
+        <div class="section-heading reveal" data-reveal="left">
+          <span class="section-index">06 / FUTURE GOALS</span>
+          <h2>Where I want to grow next.</h2>
+          <p>
+            InshaAllah, my long-term goal is to become a professional cybersecurity specialist with strong practical expertise in offensive security.
+          </p>
+        </div>
+
+        <div class="goal-orbit reveal" data-reveal="right">
+          <div class="goal-center">Future<br />Focus</div>
+          <div class="goal-chip goal-1">VAPT</div>
+          <div class="goal-chip goal-2">Web App Pentesting</div>
+          <div class="goal-chip goal-3">API Pentesting</div>
+          <div class="goal-chip goal-4">Network Pentesting</div>
+          <div class="goal-chip goal-5">Red Teaming</div>
+          <div class="goal-chip goal-6">Security Reporting</div>
+        </div>
+      </div>
+
+      <div class="shell career-card reveal glow-card" data-reveal="up">
+        <div>
+          <span class="card-label">Career Objective</span>
+          <h3>Build fundamentals first. Develop professional depth over time.</h3>
+        </div>
+        <p>
+          My priority is to understand cybersecurity fundamentals properly, gain practical exposure, and improve step by step. Over time, I aim to specialize in VAPT, Web Application Penetration Testing, API Penetration Testing, Network Penetration Testing, and Red Teaming.
+        </p>
+      </div>
+    </section>
+
+    <section class="section strengths-section" id="strengths">
+      <div class="shell">
+        <div class="section-heading reveal" data-reveal="up">
+          <span class="section-index">07 / STRENGTHS</span>
+          <h2>Mindset matters.</h2>
+        </div>
+        <div class="strength-grid">
+          <span class="reveal" data-reveal="up">Problem Solving</span>
+          <span class="reveal" data-reveal="up">Curiosity about Technology</span>
+          <span class="reveal" data-reveal="up">Willingness to Learn</span>
+          <span class="reveal" data-reveal="up">Practical Learning Mindset</span>
+          <span class="reveal" data-reveal="up">Continuous Self-Improvement</span>
+          <span class="reveal" data-reveal="up">Interest in Offensive Security</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="shell contact-layout">
+        <div class="contact-copy reveal" data-reveal="left">
+          <span class="section-index">08 / CONTACT</span>
+          <h2>Let's connect and keep learning.</h2>
+          <p>I am interested in cybersecurity, practical projects, ethical hacking, Red Teaming, and connecting with people who share an interest in technology and security.</p>
+        </div>
+
+        <div class="contact-panel reveal glow-card" data-reveal="right">
+          <div class="contact-row">
+            <span>Email</span>
+            <a href="mailto:zymalazeem02@gmail.com">zymalazeem02@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span>Phone</span>
+            <a href="tel:+923334638496">0333 4638496</a>
+          </div>
+          <div class="contact-actions">
+            <a href="mailto:zymalazeem02@gmail.com" class="btn btn-primary">Send Email</a>
+            <a href="#top" class="btn btn-ghost">Back to Top</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-shell">
+      <p>© <span id="currentYear"></span> Zymal Azeem</p>
+      <p class="footer-code">&lt;learning /&gt; &nbsp; &lt;practice /&gt; &nbsp; &lt;improve /&gt;</p>
+    </div>
+  </footer>
+</body>
+</html>
